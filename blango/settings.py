@@ -197,6 +197,11 @@ class Dev(Configuration):
 
   INTERNAL_IPS = ["192.168.11.179"]
 
+  EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
+  ACCOUNT_ACTIVATION_DAYS = 7
+
+
 
 
 class Prod(Dev):
