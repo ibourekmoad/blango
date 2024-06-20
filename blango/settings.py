@@ -43,6 +43,7 @@ class Dev(Configuration):
 
   INSTALLED_APPS = [
       'rest_framework',
+      'rest_framework.authtoken',
       'django.contrib.admin',
       'django.contrib.auth',
       'django.contrib.contenttypes',
@@ -200,7 +201,15 @@ class Dev(Configuration):
 
   EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
-  ACCOUNT_ACTIVATION_DAYS = 7
+  ACCOUNT_ACTIVATION_DAYS = 7.
+
+  REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        "rest_framework.authentication.BasicAuthentication",
+        "rest_framework.authentication.SessionAuthentication",
+        "rest_framework.authentication.TokenAuthentication",
+    ]
+}
 
 
 
